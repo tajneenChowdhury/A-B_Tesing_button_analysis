@@ -53,8 +53,11 @@ Outcome: Reject H0 (Statistically Significant)
 ## Methodology
 
 Conducted Chi-Square Test of Independence
+
 Performed post-hoc analysis with Bonferroni correction
+
 Analysis implemented in Python
+
 ## Key Insights
 
 A and C perform similarly in CTR (not statistically different)
@@ -67,21 +70,30 @@ D significantly underperforms across key metrics
 
 ## Conclusion
 
-No single statistically dominant winner was identified
-Versions A and C belong to the top performance tier
-Version A is more balanced, while C is more attention-grabbing but less effective post-click
-Next Steps
+No single statistically dominant winner was identified.
+
+Versions A and C belong to the top performance tier.
+
+Version A is more balanced, while C is more attention-grabbing but less effective post-click.
+
+## Next Steps
 
 To identify a definitive winner, further actions are recommended:
 
-Consider additional metrics beyond CTR
+Consider additional metrics beyond CTR.
+
 Incorporate qualitative user research
+
 Consult subject-matter experts
+
 Redesign and rerun the experiment
 
 ## Tools & Technologies
 
 Python
+
 NumPy
+
 SciPy (chi2_contingency)
+
 Statistical Hypothesis Testing
