@@ -10,17 +10,6 @@ Use statistical testing to validate results
 Support decision-making with additional behavioral metrics
 Variants Tested A - White “SHOP NOW” B - Red “SHOP NOW” C - White “SEE DEALS” D - Red “SEE DEALS”
 
-
-## 🔘 Tested CTA Variants (2×2 Factorial Design)
-
-The experiment followed a $2 \times 2$ factorial structure across 4 variants over a 14-day test period:
-
-### Visual Button Preview
-* **Variant A:** ![Variant A](https://img.shields.io/badge/SHOP_NOW-FFFFFF?style=for-the-badge&logoColor=000000&color=E0E0E0) *(White button, dark copy)*
-* **Variant B:** ![Variant B](https://img.shields.io/badge/SHOP_NOW-D32F2F?style=for-the-badge&logoColor=FFFFFF) *(Red button, white copy)*
-* **Variant C:** ![Variant C](https://img.shields.io/badge/SEE_DEALS-FFFFFF?style=for-the-badge&logoColor=000000&color=E0E0E0) *(White button, dark copy)*
-* **Variant D:** ![Variant D](https://img.shields.io/badge/SEE_DEALS-D32F2F?style=for-the-badge&logoColor=FFFFFF) *(Red button, white copy)*
-
 ---
 
 ### Variant Specifications & Design Rationale
@@ -69,9 +58,13 @@ Analysis implemented in Python
 ## Key Insights
 
 A and C perform similarly in CTR (not statistically different)
+
 C attracts more clicks but loses users quickly
+
 A provides better overall user engagement
+
 D significantly underperforms across key metrics
+
 ## Conclusion
 
 No single statistically dominant winner was identified
