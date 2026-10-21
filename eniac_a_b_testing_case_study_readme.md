@@ -6,9 +6,16 @@ The goal was to determine whether different button designs lead to statistically
 ### Objective
 
 Identify whether any button variant significantly outperforms others in terms of CTR
+
 Use statistical testing to validate results
+
 Support decision-making with additional behavioral metrics
-Variants Tested A - White “SHOP NOW” B - Red “SHOP NOW” C - White “SEE DEALS” D - Red “SEE DEALS”
+
+Variants Tested
+A - White “SHOP NOW” 
+B - Red “SHOP NOW” 
+C - White “SEE DEALS” 
+D - Red “SEE DEALS”
 
 ---
 
