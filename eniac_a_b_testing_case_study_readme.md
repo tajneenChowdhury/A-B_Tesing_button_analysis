@@ -1,23 +1,15 @@
-# Eniac E-Commerce: Homepage CTA Button A/B/n Test Analysis
+## Project Overview 
+This project analyzes the performance of four button variations on the Eniac website using Chi-Square hypothesis testing in Python.
 
-![Python](https://img.shields.io/badge/Python-3.8%2B-blue?logo=python)
-![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-orange?logo=jupyter)
-![License](https://img.shields.io/badge/License-MIT-green)
-![Status](https://img.shields.io/badge/Status-Completed-success)
+The goal was to determine whether different button designs lead to statistically significant differences in user behavior, primarily focusing on click-through rates (CTR), while also considering user engagement metrics.
 
----
+### Objective
 
-## 📌 Executive Summary
+Identify whether any button variant significantly outperforms others in terms of CTR
+Use statistical testing to validate results
+Support decision-making with additional behavioral metrics
+Variants Tested A - White “SHOP NOW” B - Red “SHOP NOW” C - White “SEE DEALS” D - Red “SEE DEALS”
 
-This repository presents an **A/B/n multivariate testing case study** conducted on the homepage call-to-action (CTA) button for the e-commerce retailer **Eniac**. The primary objective was to investigate the interaction between **Button Color** (White vs. Red) and **Button Copy** ("SHOP NOW" vs. "SEE DEALS") to identify the variant that optimizes user interaction, downstream navigation, and conversion likelihood.
-
-The analysis integrates:
-* **Click-Through Rate (CTR)** calculations across all variants.
-* **Omnibus Chi-Square Test of Independence** ($\alpha = 0.05$).
-* **Post-hoc Pairwise Tests** with **Bonferroni Adjustment** ($\alpha_{\text{adjusted}} = 0.00833$).
-* **Full-Funnel Metric Evaluation** using **Drop-off Rate** and **Homepage-Return Rate (HRR)**.
-
----
 
 ## 🔘 Tested CTA Variants (2×2 Factorial Design)
 
@@ -46,10 +38,10 @@ The experiment followed a $2 \times 2$ factorial structure across 4 variants ove
 
 | Variant | Total Visits ($N$) | Button Clicks | No-Clicks | CTR (%) | Rank |
 | :---: | :---: | :---: | :---: | :---: | :---: |
-| **Version C** | 24,876 | 527 | 24,349 | **2.12%** | 🥇 1st |
-| **Version A** | 25,326 | 512 | 24,814 | **2.02%** | 🥈 2nd |
-| **Version B** | 24,747 | 281 | 24,466 | **1.14%** | 🥉 3rd |
-| **Version D** | 25,233 | 193 | 25,040 | **0.76%** | 4th |
+| **Version C** | 24,876 | 527 | 24,349 | **2.12%** |  1st |
+| **Version A** | 25,326 | 512 | 24,814 | **2.02%** |  2nd |
+| **Version B** | 24,747 | 281 | 24,466 | **1.14%** |  3rd |
+| **Version D** | 25,233 | 193 | 25,040 | **0.76%** |  4th |
 
 ---
 
@@ -69,75 +61,34 @@ p-value: 2.65e-48 (p < 0.0001)
 Outcome: Reject H0 (Statistically Significant)
 ```
 
----
+## Methodology
 
-### 2. Post-Hoc Pairwise Tests (Bonferroni Correction)
-To control family-wise error rate across $\binom{4}{2} = 6$ comparisons, the significance threshold was set to:
+Conducted Chi-Square Test of Independence
+Performed post-hoc analysis with Bonferroni correction
+Analysis implemented in Python
+## Key Insights
 
-$$\alpha_{\text{adjusted}} = \frac{0.05}{6} \approx 0.00833$$
+A and C perform similarly in CTR (not statistically different)
+C attracts more clicks but loses users quickly
+A provides better overall user engagement
+D significantly underperforms across key metrics
+## Conclusion
 
-| Comparison | $\chi^2$ Statistic | $p$-value | Significant ($\alpha = 0.00833$)? | Interpretation |
-| :---: | :---: | :---: | :---: | :--- |
-| **A vs. B** | 62.4936 | $2.67 \times 10^{-15}$ | **Yes** | White button strongly outperforms Red for "SHOP NOW". |
-| **A vs. C** | 0.5342 | $0.4648$ | **No** | **No significant difference** between White "SHOP NOW" and White "SEE DEALS". |
-| **A vs. D** | 144.2832 | $3.08 \times 10^{-33}$ | **Yes** | White "SHOP NOW" drastically outperforms Red "SEE DEALS". |
-| **B vs. C** | 74.2292 | $6.96 \times 10^{-18}$ | **Yes** | White "SEE DEALS" significantly outperforms Red "SHOP NOW". |
-| **B vs. D** | 17.8763 | $2.36 \times 10^{-5}$ | **Yes** | "SHOP NOW" copy beats "SEE DEALS" under Red color styling. |
-| **C vs. D** | 161.1170 | $6.45 \times 10^{-37}$ | **Yes** | White button strongly outperforms Red for "SEE DEALS". |
+No single statistically dominant winner was identified
+Versions A and C belong to the top performance tier
+Version A is more balanced, while C is more attention-grabbing but less effective post-click
+Next Steps
 
----
+To identify a definitive winner, further actions are recommended:
 
-## 🧭 Downstream Funnel Metrics Analysis
+Consider additional metrics beyond CTR
+Incorporate qualitative user research
+Consult subject-matter experts
+Redesign and rerun the experiment
 
-Because Variants **A** and **C** tied statistically on CTR, secondary post-click metrics were evaluated to break the tie:
+## Tools & Technologies
 
-| Metric | Definition | Version A | Version C | Version D |
-| :--- | :--- | :---: | :---: | :---: |
-| **Drop-Off Rate** | $\%$ of visitors who reached landing page but bounced before any conversion event. *(Lower is better)* | **62%** 🏆 *(Best)* | **71%** *(Worst)* | 69% |
-| **Homepage Return Rate (HRR)** | $\%$ of visitors who immediately clicked back to the homepage. *(Lower is better)* | 5.1% | 4.8% | **2.7%** 🏆 |
-
-*(Note: Variant B data for downstream funnel metrics was missing due to telemetry logging failure during collection).*
-
----
-
-## 💡 Key Business Insights
-
-1. **Color Primacy:** White buttons consistently drove higher user engagement than Red buttons across all tested copy variants. Red buttons decreased CTR by up to $64\%$.
-2. **The "Curiosity vs. Intent" Trap (Version C):** While "SEE DEALS" produced the highest gross clicks ($2.12\%$), it experienced a **$71\%$ drop-off rate**. This suggests users expected heavy discounts or promotional banners that were absent on the arrival page.
-3. **Balanced Conversions (Version A):** Version A had an almost identical CTR ($2.02\%$) while yielding the **lowest drop-off rate ($62\%$)**, delivering qualified, purchase-ready traffic.
-
----
-
-## 🎯 Final Decision & Roadmap
-
-* **Recommended Winner:** **Deploy Version A (White "SHOP NOW")** as default across the homepage.
-* **Landing Page Optimization:** If marketing campaigns necessitate using "SEE DEALS", rebuild the landing page experience to prominently display active offers above the fold.
-* **Telemetry Remediation:** Audit web analytics tags to prevent missing downstream tracking data as observed with Variant B.
-
----
-
-## 💻 Repository Structure & Reproduction
-
-```text
-├── A_b_testing_button_analysis.ipynb   # Main Jupyter Notebook with data and statistical tests
-├── README.md                           # Project case study documentation
-└── requirements.txt                    # Python environment requirements
-```
-
-### Installation
-
-```bash
-git clone https://github.com/<your-username>/eniac-ab-testing-case-study.git
-cd eniac-ab-testing-case-study
-pip install -r requirements.txt
-```
-
-### Requirements
-
-```text
-pandas>=1.3.0
-numpy>=1.20.0
-scipy>=1.7.0
-matplotlib>=3.4.0
-seaborn>=0.11.0
-```
+Python
+NumPy
+SciPy (chi2_contingency)
+Statistical Hypothesis Testing
