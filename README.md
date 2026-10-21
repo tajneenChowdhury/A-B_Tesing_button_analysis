@@ -25,7 +25,7 @@ Measures how often users return to the homepage after clicking
 Indicates whether users find relevant content after clicking
 Lower is better
 
-### Tested CTA Variants (2x2 Factorial Design)
+### Tested CTA Variants
 
 | Variant | Button Text (Copy) | Color Scheme | Target Page | Purpose / Hypothesis |
 |:-------:|:------------------:|:------------:|:-----------:|:---------------------|
@@ -33,3 +33,9 @@ Lower is better
 | **B** | `SHOP NOW` | Red button | Category Page | High-urgency transactional prompt (Vibrant color) |
 | **C** | `SEE DEALS` | White button | Deals / Promo Page | Value/discount-oriented copy (Neutral color) |
 | **D** | `SEE DEALS` | Red button | Deals / Promo Page | High-urgency discount prompt (Vibrant color) |
+
+## Evaluation Metrics
+
+Click-Through Rate (CTR): Measures initial user interaction and interest:
+$$\text{CTR} = \frac{\text{Total Clicks on Button}}{\text{Total Homepage Visits}}$$
+
