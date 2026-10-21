@@ -12,9 +12,13 @@ Use statistical testing to validate results
 Support decision-making with additional behavioral metrics
 
 Variants Tested
+
 A - White “SHOP NOW” 
-B - Red “SHOP NOW” 
-C - White “SEE DEALS” 
+
+B - Red “SHOP NOW”
+
+C - White “SEE DEALS”
+
 D - Red “SEE DEALS”
 
 ---
